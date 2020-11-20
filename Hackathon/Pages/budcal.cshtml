@@ -110,6 +110,15 @@
     </div>
     @*Budget review (Monthly)*@
 
+    @*Total (Monthly)*@
+    <div class="calcFieldset">
+        <div class="calcField">
+            <label for="estimated_budget" style="font-weight:bold">Estimated Budget:</label>
+            <input type="text" class="zero" id="estimated_budget" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+    </div>
+    @*Budget review (Monthly)*@
 </div>
 
 <style>
@@ -156,7 +165,15 @@
             var loan_insurance = document.getElementById("loan_insurance").value;
             var others_expenses = document.getElementById("others_expenses").value;
             document.getElementById("total_expenses").value = parseInt(food) + parseInt(accomodation) + parseInt(transport) + parseInt(entertainments) + parseInt(loan_insurance) + parseInt(others_expenses);
+
+            var total_income = document.getElementById("total_income").value;
+            var total_saving = document.getElementById("total_saving").value;
+            var total_expenses = document.getElementById("total_expenses").value;
+            document.getElementById("estimated_budget").value = parseInt(total_income) - parseInt(total_saving) - parseInt(total_expenses);
+
         })
     });
+
+
 
 </script>
