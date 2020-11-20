@@ -1,0 +1,108 @@
+﻿@page
+@model Hackathon.Pages.GameSimulatorModel
+
+@{
+    ViewData["Title"] = "Stock Simulator";
+}
+<style>
+    .graph {
+        height: 400px;
+        width: 400px;
+    }
+</style>
+<div class="container-fluid">
+    <h3>Stock Simulator</h3>
+    <canvas id="myChart" class="graph"></canvas>
+    <div class="leaderboard">
+        <h2>LeaderBoard</h2>
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Names</th>
+                <th>Score</th>
+                <th>LastUpdateDate</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Alfreds Futterkiste</td>
+                <td>1000</td>
+                <td>@DateTime.Now</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Michell</td>
+                <td>1000</td>
+                <td>@DateTime.Now</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Richard Alibaba</td>
+                <td>1000</td>
+                <td>@DateTime.Now</td>
+            </tr>
+        </table>
+    </div>
+    <div id="controls" class="">
+        <div class="">
+            <form>
+                <label>Stock:</label>
+                <select name="cars" id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <label>Quantity:</label>
+                <input />
+                <button>Buy</button>
+                <button>Sell</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+    <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+
+    </script>
+
+}
