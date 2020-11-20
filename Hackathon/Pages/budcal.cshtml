@@ -2,3 +2,161 @@
 @model Hackathon.Pages.budcalModel
 @{
 }
+
+<div class="maincontent" style="width: 485px">
+
+
+    @*  Monthly Income   *@
+    <div class="calcFieldset">
+        <p style="font-weight:bold">Monthly Income:</p>
+        <div class="calcField">
+            <label for="salary">Salary:</label>
+            <input type="text" class="zero" id="salary" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+
+        </div>
+
+        <div class="calcField">
+            <label for="others_income">Others:</label>
+            <input type="text" class="zero" id="others_income" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+    </div>
+    @*  Monthly Income   *@
+
+    @*  Monthly Savings   *@
+    <div class="calcFieldset">
+        <p style="font-weight:bold">Monthly Savings:</p>
+        <div class="calcField">
+            <label for="invesment">Investments:</label>
+            <input type="text" class="zero" id="invesment" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+
+        <div class="calcField">
+            <label for="fixed_deposit">Fixed Deposit:</label>
+            <input type="text" class="zero" id="fixed_deposit" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+        <div class="calcField">
+            <label for="others_saving">Others:</label>
+            <input type="text" class="zero" id="others_saving" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+    </div>
+    @*  Monthly Savings   *@
+
+    @*  Monthly Expenses  *@
+    <div class="calcFieldset">
+        <p style="font-weight:bold">Monthly Expenses:</p>
+        <div class="calcField">
+            <label for="food">Food:</label>
+            <input type="text" class="zero" id="food" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+
+        <div class="calcField">
+            <label for="accomodation">Rent/Accommodation:</label>
+            <input type="text" class="zero" id="accomodation" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+
+        <div class="calcField">
+            <label for="transport">Transportation:</label>
+            <input type="text" class="zero" id="transport" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+        <div class="calcField">
+            <label for="entertainments">Entertainments:</label>
+            <input type="text" class="zero" id="entertainments" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+
+        <div class="calcField">
+            <label for="loan_insurance">Loan & Insurance:</label>
+            <input type="text" class="zero" id="loan_insurance" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+        <div class="calcField">
+            <label for="others_expenses">Others:</label>
+            <input type="text" class="zero" id="others_expenses" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+    </div>
+
+    @*  Monthly Expenses   *@
+
+    @*Budget review (Monthly) *@
+
+    <div class="calcFieldset">
+        <p style="font-weight:bold">Budget review (Monthly):</p>
+        <div class="calcField">
+            <label for="total_income">Total Income:</label>
+            <input type="text" class="zero" id="total_income" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+
+        <div class="calcField">
+            <label for="total_saving">Total Savings:</label>
+            <input type="text" class="zero" id="total_saving" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+
+        <div class="calcField">
+            <label for="total_expenses">Total Expenses:</label>
+            <input type="text" class="zero" id="total_expenses" maxlength="6" value="0" style="float: right;">
+            <span class="desc" style="float: right;margin-right:5px;">RM</span>
+        </div>
+    </div>
+    @*Budget review (Monthly)*@
+
+</div>
+
+<style>
+    .calcFieldset {
+        background-color: #f4f4f4;
+        border: 1px solid #CCC;
+        border-bottom-color: #e6e6e6;
+        border-right-color: #e6e6e6;
+        margin: 1em 0;
+        padding: .769em 10px 0 10px;
+        position: relative;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px
+    }
+
+    .calcField {
+        background: #e6e6e6;
+        margin: 0 0 .769em 0;
+        padding: .769em 10px;
+        position: relative;
+        border-radius: 3px;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px
+    }
+</style>
+<script type="text/javascript" src="~/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".zero").change(function () {
+            var salary = document.getElementById("salary").value;
+            var others_income = document.getElementById("salary").value;
+            document.getElementById("total_income").value = parseInt(salary) + parseInt(others_income);
+
+            var invesment = document.getElementById("invesment").value;
+            var fixed_deposit = document.getElementById("fixed_deposit").value;
+            var others_saving = document.getElementById("others_saving").value;
+            document.getElementById("total_saving").value = parseInt(invesment) + parseInt(fixed_deposit) + parseInt(others_saving);
+
+            var food = document.getElementById("food").value;
+            var accomodation = document.getElementById("accomodation").value;
+            var transport = document.getElementById("transport").value;
+            var entertainments = document.getElementById("entertainments").value;
+            var loan_insurance = document.getElementById("loan_insurance").value;
+            var others_expenses = document.getElementById("others_expenses").value;
+            document.getElementById("total_expenses").value = parseInt(food) + parseInt(accomodation) + parseInt(transport) + parseInt(entertainments) + parseInt(loan_insurance) + parseInt(others_expenses);
+        })
+    });
+
+</script>

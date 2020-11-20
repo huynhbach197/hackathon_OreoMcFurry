@@ -73,3 +73,4 @@ C:\Users\huynh\OneDrive\Documents\Code\00_Lingkail\08_Hackathon\hackathon_OreoMc
 C:\Users\huynh\OneDrive\Documents\Code\00_Lingkail\08_Hackathon\hackathon_OreoMcFurry\Hackathon\obj\Debug\netcoreapp3.1\Hackathon.pdb
 C:\Users\huynh\OneDrive\Documents\Code\00_Lingkail\08_Hackathon\hackathon_OreoMcFurry\Hackathon\obj\Debug\netcoreapp3.1\Hackathon.genruntimeconfig.cache
 C:\Users\huynh\OneDrive\Documents\Code\00_Lingkail\08_Hackathon\hackathon_OreoMcFurry\Hackathon\obj\Debug\netcoreapp3.1\Hackathon.csproj.CopyComplete
+C:\Users\huynh\OneDrive\Documents\Code\00_Lingkail\08_Hackathon\hackathon_OreoMcFurry\Hackathon\obj\Debug\netcoreapp3.1\Razor\Pages\budcal.cshtml.g.cs
