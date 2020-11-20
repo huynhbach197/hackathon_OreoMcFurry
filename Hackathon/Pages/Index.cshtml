@@ -1,0 +1,103 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container_header">
+    
+    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
+    <div class="centered"><h1 class="display-4">Where investing all begins!</h1></div>
+    <img src="~/header.jpg" />
+
+
+
+</div>
+<div class="budget_cal_container">
+    <div class="budget_cal">
+        <img src="~/calc.jpg" style="opacity: 0.5; width: 500px; height: 450px;" />
+        <button class="btn" style="width:auto" type="submit">Budget Calculator</button>
+    </div>
+
+    <button style="width:auto" type="submit" class="btn btn-primary">Try Out</button>
+    <button style="width:auto" type="submit" class="btn btn-primary">Download Widget</button>
+
+</div>
+<div class="self_disco">
+    <button style="width:auto" type="submit" class="btn btn-primary">Try Out</button>
+    <button style="width:auto" type="submit" class="btn btn-primary">Download Widget</button>
+
+</div>
+<div class="self_disco">
+    <button style="width:auto" type="submit" class="btn btn-primary">Try Out</button>
+    <button style="width:auto" type="submit" class="btn btn-primary">Download Widget</button>
+
+</div>
+
+<style>
+    .budget_cal {
+        position: relative;
+        width: 50%;
+    }
+    .budget_cal img {
+        width: 100%;
+        height: auto;
+    }
+
+    .budget_cal .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .budget_cal .btn:hover {
+            background-color: black;
+        }
+    .container_header {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-left: auto;
+    }
+
+    .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+    }
+
+    .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+
+    .top-right {
+        position: absolute;
+        top: 8px;
+        right: 16px;
+    }
+
+    .bottom-right {
+        position: absolute;
+        bottom: 8px;
+        right: 16px;
+    }
+
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: bold;
+    }
+</style>
