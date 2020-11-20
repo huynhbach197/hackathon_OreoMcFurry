@@ -2,3 +2,151 @@
 @model Hackathon.Pages.Index1Model
 @{
 }
+
+@*<div class="container_header" style="height: 170px;">
+    <img src="~/question.jpg" style="width:600px; height:337px"/>
+</div>*@
+
+<div class="questions_container">
+    
+    <h1 style="color: white; margin-left: 30px; margin-right: 30px;">Do you hold a qualification in financial/ business related fields?</h1>
+    <label id="rdbtn1"><input type="radio" value="2" name="radAnswer1" style="width: 40px;" />Yes</label>
+    <label id="rdbtn1"><input type="radio" value="1" name="radAnswer1" style="width: 40px;" />No</label>
+    <label id="rdbtn1"><input type="radio" value="0" name="radAnswer1" style="width: 40px;" />Not sure</label>
+
+
+</div>
+
+<div class="questions_container" style="height: 200px;">
+
+    <h1 style="color: white; margin-left: 30px; margin-right: 30px;">
+    What is the maximum % of the total capital you placed in the equity market you can afford to lose in the next 12 months?
+    </h1>
+    <label id="rdbtn2"><input type="radio" value="2" name="radAnswer2" style="width: 40px;" />> 30%</label>
+    <label id="rdbtn2"><input type="radio" value="1" name="radAnswer2" style="width: 40px;" />20 - 30%</label>
+    <label id="rdbtn2"><input type="radio" value="0" name="radAnswer2" style="width: 40px;" />< 20%</label>
+
+
+</div>
+
+
+<div class="questions_container" style="height: 270px;">
+
+    <h1 style="color: white; margin-left: 30px; margin-right: 30px;">
+        Do you aim for achieving substantial income generation and/or capital growth on your investments, by taking significantly high levels of investment risk of around 20-30% of your investment?
+    </h1>
+    <label id="rdbtn3"><input type="radio" value="2" name="radAnswer3" style="width: 40px;" />Yes</label>
+    <label id="rdbtn3"><input type="radio" value="1" name="radAnswer3" style="width: 40px;" />No</label>
+    <label id="rdbtn3"><input type="radio" value="0" name="radAnswer3" style="width: 40px;" />Not sure</label>
+</div>
+<button class="btn_submit" onclick="get_result()">Submit</button>
+<p id="result_score"></p>
+<span id="buttonAppear"></span>
+<p id="analysized_result"></p>
+<span id="signup"></span>
+<script>
+    var total_score = 0;
+    function get_result() {
+        if (document.getElementById('rdbtn1').checked) {
+            var result_q1 = document.getElementById('rdbtn1').value;
+        }
+        if (document.getElementById('rdbtn1').checked) {
+            var result_q2 = document.getElementById('rdbtn2').value;
+        }
+        if (document.getElementById('rdbtn1').checked) {
+            var result_q3 = document.getElementById('rdbtn3').value;
+        }
+
+        var result_q1 = $('input[name=radAnswer1]:checked').val();
+        var result_q2 = $('input[name=radAnswer2]:checked').val();
+        var result_q3 = $('input[name=radAnswer3]:checked').val();
+        total_score = parseInt(result_q1) + parseInt(result_q2) + parseInt(result_q3);
+        document.getElementById("result_score").innerHTML = total_score.toString();
+        document.getElementById("buttonAppear").innerHTML = '<button class="btn_analysis" onclick="result_analysis()">Analyze Result</button>';
+        
+    }
+    var result_1 = "Your score is below 50%, no worries, hop on to our game center.<BR>Gain more knowledge on the fundamental of share investment to be a profitable investor!";
+    var result_2 = 'Well done! Check out our game centre and if it’s too easy for you,<BR>head on to Bursa’s learning portal where you will get many relevant information.<a id = "link"></a>';
+    function result_analysis() {
+        total_score = parseInt(total_score);
+        if (0 <= total_score && total_score < 3) {
+            document.getElementById("analysized_result").innerHTML = result_1;
+        }
+        else {
+            document.getElementById("analysized_result").innerHTML = result_2;
+            $('#link').html('link');
+            $('#link').attr('href', 'https://www.bursamarketplace.com/');
+        }
+        
+
+    }
+
+
+</script>
+<style>
+    .btn_submit {
+        border-radius: 3em;
+        width: 200px;
+        height: 100px;
+        background: linear-gradient(to bottom, #9999ff 0%, #3333ff 100%);
+        font-size: 35px;
+        color: white;
+    }
+    .btn_analysis {
+        border-radius: 3em;
+        width: 300px;
+        height: 100px;
+        background: linear-gradient(to bottom, #9999ff 0%, #6666ff 100%);
+        font-size: 35px;
+        color: white;
+        transform: translateX(136%);
+    }
+    .signup {
+        border-radius: 3em;
+        width: 300px;
+        height: 100px;
+        background: linear-gradient(to bottom, #9999ff 0%, #0000ff 100%);
+        font-size: 35px;
+        color: white;
+        transform: translateX(136%);
+    }
+    .container_header {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin-left: auto;
+    }
+    #rdbtn1 {
+        color: white;
+        font-size: 30px;
+        margin-left: 30px;
+    }
+    #rdbtn2 {
+        color: white;
+        font-size: 30px;
+        margin-left: 30px;
+    }
+    #rdbtn3 {
+        color: white;
+        font-size: 30px;
+        margin-left: 30px;
+    }
+    #result_score {
+        color: black;
+        font-size: 100px;
+        font-weight:bold;
+        text-align: center;
+    }
+    #analysized_result {
+        color: black;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: left;
+    }
+    .questions_container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 3em;
+        background-color: #ff0000;
+    }
+</style>
