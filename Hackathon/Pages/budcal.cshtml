@@ -3,14 +3,49 @@
 @{
 }
 
-<div class="maincontent">
-    <div class="oreoBudgetCalculator" />
-</div>
+<style>
+    .background-image {
+        /* The image used */
+        background-image: url("../assets/images/wallet.jpg");
+        /* Set a specific height */
+        min-height: 500px;
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-weight: bold;
+    }
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        loadOreoCalculator($('.oreoBudgetCalculator'));
-    });
-</script>
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8em;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .background-image .title {
+        color: white;
+    }
+
+    .background-image p {
+        color: white;
+    }
+</style>
+<div class="background-image">
+    <div class="title">
+        <h1>Financial Calculator</h1>
+    </div>
+    <div class="maincontent container">
+        <div class="oreoBudgetCalculator" />
+    </div>
+</div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            loadOreoCalculator($('.oreoBudgetCalculator'));
+        });
+    </script>
 
