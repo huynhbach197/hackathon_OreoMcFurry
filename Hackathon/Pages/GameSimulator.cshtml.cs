@@ -16,7 +16,7 @@ namespace Hackathon.Pages
             {
                 var id = HttpContext.Session.Id;
                 HttpContext.Session.SetString("ID", id);
-                ViewData["Name"] = "";
+                ViewData["Name"] = null;
             }
             else
             {

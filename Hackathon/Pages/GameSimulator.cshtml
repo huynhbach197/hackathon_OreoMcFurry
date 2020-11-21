@@ -98,7 +98,7 @@
     </div>
     <div id="controls" class="controls">
         <div class="">
-            @if (String.IsNullOrEmpty(ViewData["Name"].ToString()))
+            @if (ViewData["Name"] == null)
             {
                 <form method="post">
                     <div class="form-group">

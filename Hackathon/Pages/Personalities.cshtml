@@ -1,0 +1,65 @@
+﻿@page
+@model Hackathon.Pages.PersonalitiesModel
+@{
+}
+
+<style>
+    .type-group{
+
+    }
+    .type-group .types{
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    .type-group .types .type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-decoration: none;
+        outline: 0;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .type img{
+        height: 400px;
+        width : 400px;
+    }
+</style>
+<div>
+    <div class="header">
+        <h1>Personality Types</h1>
+    </div>
+
+    <div class="type-group">
+        <div class="types">
+            <a href="#" class="type">
+                <img src="~/assets/images/investor.gif"/>
+                <h5>Investor</h5> 
+                <div class="snippet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ligula eu laoreet accumsan. Morbi et vestibulum sem.</div>
+            </a>            
+            <a href="#" class="type">
+                <img src="~/assets/images/student.gif"/>
+                <h5>Explorer</h5> 
+                <div class="snippet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ligula eu laoreet accumsan. Morbi et vestibulum sem.</div>
+            </a>           
+            <a href="#" class="type">
+                <img src="~/assets/images/trader.gif"/>
+                <h5>Trader</h5> 
+                <div class="snippet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ligula eu laoreet accumsan. Morbi et vestibulum sem.</div>
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+
+ }
