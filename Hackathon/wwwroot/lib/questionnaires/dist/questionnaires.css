@@ -1,0 +1,66 @@
+
+.btn_submit {
+    border-radius: 3em;
+    width: 200px;
+    height: 100px;
+    background: linear-gradient(to bottom, #9999ff 0%, #3333ff 100%);
+    font-size: 35px;
+    color: white;
+}
+.btn_analysis {
+    border-radius: 3em;
+    width: 300px;
+    height: 100px;
+    background: linear-gradient(to bottom, #9999ff 0%, #6666ff 100%);
+    font-size: 35px;
+    color: white;
+    transform: translateX(136%);
+}
+.signup {
+    border-radius: 3em;
+    width: 300px;
+    height: 100px;
+    background: linear-gradient(to bottom, #9999ff 0%, #0000ff 100%);
+    font-size: 35px;
+    color: white;
+    transform: translateX(136%);
+}
+.container_header {
+    position: relative;
+    text-align: center;
+    color: black;
+    margin-left: auto;
+}
+#rdbtn1 {
+    color: white;
+    font-size: 30px;
+    margin-left: 30px;
+}
+#rdbtn2 {
+    color: white;
+    font-size: 30px;
+    margin-left: 30px;
+}
+#rdbtn3 {
+    color: white;
+    font-size: 30px;
+    margin-left: 30px;
+}
+#result_score {
+    color: black;
+    font-size: 100px;
+    font-weight:bold;
+    text-align: center;
+}
+#analysized_result {
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: left;
+}
+.questions_container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 3em;
+    background-color: #ff0000;
+}

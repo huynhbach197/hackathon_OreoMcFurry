@@ -1,0 +1,36 @@
+.mainContent {
+	display: 'flex',
+}
+
+.calcFieldset {
+	background-color: #f4f4f4;
+	border: 1px solid #CCC;
+	border-bottom-color: #e6e6e6;
+	border-right-color: #e6e6e6;
+	margin: 1em 0;
+	padding: .769em 10px 0 10px;
+	position: relative;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px
+}
+
+.calcField {
+	background: #e6e6e6;
+	margin: 0 0 .769em 0;
+	padding: .769em 10px;
+	position: relative;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0
+}
+
+input[type=number] {
+	-moz-appearance: textfield
+}
