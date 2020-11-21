@@ -109,17 +109,27 @@ function loadOreoCalculator(DOMElement) {
         element.append(groupContainer);
     }
 
-    let backButton = document.createElement("button");
-    backButton.innerHTML = "Back";
-    $(backButton).css({ margin: '5px' });
-    backButton.onclick = function () { window.location.href = '../'; }
-    element.append(backButton);
-
     let actionButton = document.createElement("button");
     actionButton.innerHTML = "Analyze";
-    $(actionButton).css({ margin: '5px' });
+    actionButton.setAttribute('class', 'btn btn-primary');
+    $(actionButton).css({
+        float: 'right',
+        marginRight: '10px',
+        width: '120px'
+    });
     actionButton.onclick = function () { analyzeBudget(); }
     element.append(actionButton);
+
+    let backButton = document.createElement("button");
+    backButton.innerHTML = "Back";
+    backButton.setAttribute('class', 'btn btn-primary');
+    $(backButton).css({
+        float: 'right',
+        marginRight: '10px',
+        width: '120px'
+    });
+    backButton.onclick = function () { window.location.href = '../'; }
+    element.append(backButton);
 
     $(DOMElement).html(element);
     
