@@ -10,16 +10,13 @@
         width: 400px;
     }
 
-    .grid-container{
+    .grid-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 100px 1fr 1fr 1fr;
-        grid-template-areas:
-            "title title"
-            "chart chart"
-            "news  leaderboard"
-            "controls controls";
+        grid-template-areas: "title title" "chart chart" "news  leaderboard" "controls controls";
     }
+
     .leaderboard {
         grid-area: leaderboard;
     }
@@ -33,13 +30,14 @@
     .controls {
         grid-area: controls;
     }
-    .title{
+
+    .title {
         grid-area: title;
     }
-    .news{
+
+    .news {
         grid-area: news;
     }
-
 </style>
 <div class="grid-container">
     <div class="title">
@@ -52,27 +50,27 @@
         <h2>LeaderBoard</h2>
         <table class="table">
             <tr>
-                <th>#</th>
+                <th>Rank</th>
                 <th>Names</th>
-                <th>Score</th>
+                <th>Profit %</th>
                 <th>LastUpdateDate</th>
             </tr>
             <tr>
                 <td>1</td>
                 <td>Alfreds Futterkiste</td>
-                <td>1000</td>
+                <td>150</td>
                 <td>@DateTime.Now</td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Michell</td>
-                <td>1000</td>
+                <td>100</td>
                 <td>@DateTime.Now</td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Richard Alibaba</td>
-                <td>1000</td>
+                <td>30</td>
                 <td>@DateTime.Now</td>
             </tr>
         </table>
@@ -100,99 +98,130 @@
     </div>
     <div id="controls" class="controls">
         <div class="">
-            <form>
-                <div class="form-group">
-                    <label>Stock:</label>
-                    <select class="form-control" name="stock" id="stocks">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                    </select>
-                </div>                
-                <div class="form-group">
-                    <label>Quantity:</label>
-                    <input type="text" class="form-control"/>
-                </div>                
-                <div class="form-group">
-                    <button class="btn btn-primary" style="width:25%;">Buy</button>
-                    <button class="btn btn-danger" style="width:25%">Sell</button>
-                </div>
-            </form>
+            @if (String.IsNullOrEmpty(ViewData["Name"].ToString()))
+            {
+                <form method="post">
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" class="form-control" name="Name" />
+                    </div>
+                    <div class="form-group">
+                        <label>Amount:</label>
+                        <input type="text" class="form-control" name="Amount" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" style="width:25%;" type="submit" asp-page-handler="Register">Get Started</button>
+                    </div>
+                </form>
+            }
+            else
+            {
+                <form method="post">
+                    <div class="form-group">
+                        <p>Welcome @ViewData["Name"]</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Stock:</label>
+                        <select class="form-control" name="stock" id="stocks">
+                            <option value="volvo">Apple</option>
+                            <option value="saab">Samsung</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity:</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" style="width:25%;">Buy</button>
+                        <button class="btn btn-danger" style="width:25%">Sell</button>
+                    </div>
+                </form>
+            }
+
         </div>
     </div>
 </div>
 
 @section Scripts{
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
-<script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-
-
-	var config = {
-		type: 'line',
-		data: {
-			labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-			datasets: [{
-				label: 'Unfilled',
-				fill: false,
-                backgroundColor: 'rgba(41, 241, 195, 1)',
-                borderColor: 'rgba(41, 241, 195, 1)',
-				data: [
-					10,
-					20,
-					30,
-				],
-			}, {
-				label: 'Dashed',
-				fill: false,
-                backgroundColor: 'rgba(240, 52, 52)',
-                borderColor: 'rgba(240, 52, 52)',
-				borderDash: [5, 5],
-				data: [
-                    -10,
-                    -20,
-                    -30,
-				],
-			}]
-		},
-		options: {
-			responsive: true,
-			title: {
-				display: true,
-				text: 'Chart.js Line Chart'
-			},
-			tooltips: {
-				mode: 'index',
-				intersect: false,
-			},
-			hover: {
-				mode: 'nearest',
-				intersect: true
-			},
-			scales: {
-				xAxes: [{
-					display: true,
-					scaleLabel: {
-						display: true,
-						labelString: 'Month'
-					}
-				}],
-				yAxes: [{
-					display: true,
-					scaleLabel: {
-						display: true,
-						labelString: 'Value'
-					}
-				}]
-			}
-		}
-	};
-
-    window.onload = function () {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js" integrity="sha512-SuxO9djzjML6b9w9/I07IWnLnQhgyYVSpHZx0JV97kGBfTIsUYlWflyuW4ypnvhBrslz1yJ3R+S14fdCWmSmSA==" crossorigin="anonymous"></script>
+    <script>
         var ctx = document.getElementById('myChart').getContext('2d');
-        window.myLine = new Chart(ctx, config);
-    };
 
-</script>
+
+        var config = {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Apple',
+                    fill: false,
+                    backgroundColor: 'rgba(41, 241, 195, 1)',
+                    borderColor: 'rgba(41, 241, 195, 1)',
+                    data: [
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),                     
+                    ],
+                }, {
+                    label: 'Samsung',
+                    fill: false,
+                    backgroundColor: 'rgba(240, 52, 52)',
+                    borderColor: 'rgba(240, 52, 52)',
+                    borderDash: [5, 5],
+                    data: [
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100),
+                        Math.floor(Math.random() * 100), 
+                    ],
+                }]
+            },
+            options: {
+                responsive: true,
+                title: {
+                    display: true,
+                    text: 'Chart.js Line Chart'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Month'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }]
+                }
+            }
+        };
+
+        window.onload = function () {
+            var ctx = document.getElementById('myChart').getContext('2d');
+            window.myLine = new Chart(ctx, config);
+        };
+
+    </script>
 
 }
