@@ -50,17 +50,17 @@ const personalities = {
     explorer: {
         icon: './assets/images/student.gif',
         label: 'Explorer',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Open-minded, Flexible in own actions and decisions, Easily convinced and trust market news, Tend to be passive and easily influenced by others to invest.',
     },
     trader: {
         icon: './assets/images/trader.gif',
         label: 'Trader',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Skilled, Technical individuals who time and learn market trends to hit higher profits in stipulated time, Tend to go for higher risk and higher potential returns.',
     },
     investor: {
         icon: './assets/images/investor.gif',
         label: 'Investor',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        description: 'Primarily Cognitive, Good Self-Control, Patience, Tend to look for long term returns not only by price movement but also compounding interest and dividend over years, Focus on business fundamentals and commitment.',
     },
 };
 
@@ -86,12 +86,13 @@ function showPersonalityResult() {
     label.append(personalities[investorType].label);
 
     let description = document.createElement('div');
+    description.setAttribute('class', 'personality_description');
     description.append(personalities[investorType].description);
 
     let seeMore = document.createElement('a');
     seeMore.setAttribute('class', 'questionnaire_seeMore');
     seeMore.setAttribute('href', 'Personalities');
-    seeMore.append('Click here to know more about your personality');
+    seeMore.append('Click here to know more about the other personalities');
 
     result.append(icon);
     result.append(label);
