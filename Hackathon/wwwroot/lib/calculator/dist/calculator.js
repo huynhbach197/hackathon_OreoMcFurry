@@ -80,7 +80,7 @@ function loadOreoCalculator(DOMElement) {
             let fieldSpan = document.createElement("span");
             fieldSpan.setAttribute('class', 'desc');
             $(fieldSpan).css({ float: 'right', marginRight: 5 });
-            fieldSpan.append(element.label);
+            fieldSpan.append('RM');
 
             groupContent.append(fieldLabel)
             groupContent.append(fieldInput)
