@@ -4,39 +4,85 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="container_header">
-    
-    @*<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
-    <div class="centered"><h1 class="display-4">Where investing all begins!</h1></div>
-    <img src="~/header.jpg" />
+<div class="container_header"><div class="container">
+    @* Main Banner *@
+    @* <div class="banner_main">
+        <div class="owl-carousel owl-theme">
+            <div class="owl-item"><h4>1</h4></div>
+            <div class="owl-item"><h4>2</h4></div>
+        </div>
+    </div> *@
 
-
-
-</div>
-<div class="budget_cal_container">
-    <div class="budget_cal">
-        <img src="~/calc.jpg" style="opacity: 0.5; width: 500px; height: 450px;" />
-        <a class="btn" style="width:auto" asp-page="/budcal">Budget Calculator</a>
+    @* Module Banner *@
+    <div class="text-center">
+        <h2 class="section-heading">Strategic Sustainability</h2>
+        <h5 class="section-subheading text-muted">Where investing all begins!</h5>
     </div>
-
-    <button style="width:auto" type="submit" class="btn btn-primary">Try Out</button>
-    <button style="width:auto" type="submit" class="btn btn-primary">Download Widget</button>
-
-</div>
-<div class="self_disco_container">
-    <div class="self_disco">
-        <img src="~/exam.jpg" style="opacity: 0.5; width: 500px; height: 450px;" />
-        <a class="btn btn-primary" style="width:auto" asp-page="/Questions">Self Discovery</a>
-    </div>
-    
-    <button style="width:auto" type="submit" class="btn btn-primary">Try Out</button>
-    <button style="width:auto" type="submit" class="btn btn-primary">Download Widget</button>
-
-</div>
-<div class="self_disco">
-    <a style="width:auto" type="submit" class="btn btn-primary" asp-page="GameSimulator">Try Game</a>
-    <button style="width:auto" type="submit" class="btn btn-primary">Download Widget</button>
-
+    <ul class="timeline">
+        <li>
+            <a class="timeline-image btn" role="button" asp-page="budcal">
+                <div class="timeline-image-svg">
+                    <svg width="5rem" height="5rem" viewBox="0 0 16 16" class="bi bi-calculator-fill" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-2zm0 4a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z"/>
+                    </svg>
+                </div>
+            </a>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="subheading">Calculate Your <br /> Investment Budget</h4>
+                </div>
+                <div class="timeline-body"><p class="text-muted">Dollarize your lifestyle and take control with this simple Budget Calculator!</p></div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <a class="timeline-image btn" role="button" asp-page="Questions">
+                <div class="timeline-image-svg">
+                    <svg width="5rem" height="5rem" viewBox="0 0 16 16" class="bi bi-search" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    </svg>
+                </div>
+            </a>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="subheading">Explore Your <br /> Investing Behaviour</h4>
+                </div>
+                <div class="timeline-body"><p class="text-muted">Let's find out how well you could excel as a stock investor!</p></div>
+            </div>
+        </li>
+        <li>
+            <a class="timeline-image btn" role="button" asp-page="GameSimulator">
+                <div class="timeline-image-svg">
+                    <svg width="5rem" height="5rem" viewBox="0 0 16 16" class="bi bi-joystick" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.106 15.553L.553 12.276A1 1 0 0 1 0 11.382V9.471a1 1 0 0 1 .606-.89L6 6.269v1.088L1 9.5l5.658 2.83a3 3 0 0 0 2.684 0L15 9.5l-5-2.143V6.27l5.394 2.312a1 1 0 0 1 .606.89v1.911a1 1 0 0 1-.553.894l-6.553 3.277a2 2 0 0 1-1.788 0z"/>
+                        <path fill-rule="evenodd" d="M7.5 9.5v-6h1v6h-1z"/>
+                        <path d="M10 9.75c0 .414-.895.75-2 .75s-2-.336-2-.75S6.895 9 8 9s2 .336 2 .75zM10 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+                    </svg>
+                </div>
+            </a>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="subheading">Stock Trading <br /> Simulator Game</h4>
+                </div>
+                <div class="timeline-body"><p class="text-muted">Kill two birds with one stone, learn investment and have fun at the same time!</p></div>
+            </div>
+        </li>
+        <li class="timeline-inverted">
+            <a class="timeline-image btn" role="button" href="https://www.bursamalaysia.com/" target="_blank">
+                <div class="timeline-image-svg">
+                    <svg width="5rem" height="5rem" viewBox="0 0 16 16" class="bi bi-people-fill" fill="#000" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                    </svg>
+                </div>
+            </a>
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="subheading">Sign Up at <a target="_blank" href="https://www.bursamalaysia.com/">Bursa</a> Now</h4>
+                </div>
+                <div class="timeline-body"><p class="text-muted">Time for the real deal! Get you CDS account now if you haven’t!</p></div>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <style>
