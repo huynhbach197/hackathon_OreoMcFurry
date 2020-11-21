@@ -67,3 +67,8 @@
     font-size: 13px;
     margin: 20px;
 }
+
+.personality_description {
+    width: 60%;
+    text-align: center;
+}
