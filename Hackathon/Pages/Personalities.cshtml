@@ -20,8 +20,11 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        text-decoration: none;
+        min-width: 100%;
         outline: 0;
+        text-decoration: none;
+        transition: transform .2s;
+        margin-top: 20px;
     }
     .header {
         display: flex;
@@ -30,9 +33,42 @@
     }
 
     .type img{
-        height: 400px;
-        width : 400px;
+        height: 300px;
+        width : 300px;
     }
+
+
+    .types a:hover {
+        transform: translate(0px,-10px);
+        color: green;
+    }
+
+    .snippet {
+        font-family: "Courier New", Courier, monospace;
+        color:black;
+    }
+
+    .type h2 {
+        font-family: Impact, Charcoal, sans-serif;
+    }
+
+    .header h1 {
+        margin: 1em 0 0.5em 0;
+        font-weight: 600;
+        font-family: 'Titillium Web', sans-serif;
+        position: relative;
+        font-size: 36px;
+        line-height: 40px;
+        padding: 15px 15px 15px 15%;
+        color: #355681;
+        box-shadow: inset 0 0 0 1px rgba(53,86,129, 0.4), inset 0 0 11px rgba(53,86,129, 0.5), inset -350px 0 35px white;
+        border-radius: 0 10px 0 10px;
+        background: #895fcc url(../assets/images/personality.png) no-repeat;
+        background-position: left;
+        background-size: 130px 60px;
+        min-width:100%;
+    }
+
 </style>
 <div>
     <div class="header">
@@ -43,17 +79,17 @@
         <div class="types">
             <a href="#" class="type">
                 <img src="~/assets/images/investor.gif"/>
-                <h5>Investor</h5> 
+                <h2>Investor</h2> 
                 <div class="snippet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ligula eu laoreet accumsan. Morbi et vestibulum sem.</div>
             </a>            
             <a href="#" class="type">
                 <img src="~/assets/images/student.gif"/>
-                <h5>Explorer</h5> 
+                <h2>Explorer</h2> 
                 <div class="snippet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ligula eu laoreet accumsan. Morbi et vestibulum sem.</div>
             </a>           
             <a href="#" class="type">
                 <img src="~/assets/images/trader.gif"/>
-                <h5>Trader</h5> 
+                <h2>Trader</h2> 
                 <div class="snippet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis faucibus ligula eu laoreet accumsan. Morbi et vestibulum sem.</div>
             </a>
         </div>
