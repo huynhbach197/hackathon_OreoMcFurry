@@ -145,7 +145,10 @@ function analyzeBudget() {
     //if budget is 0 or -ve
     if (budgetToAnalyze <= 0) {
         if (window.confirm("Do not save what is left after spending, but spend what is left after saving! Click OK and we'll guide you.")) {
-            window.location.href = 'https://mypf.my';
+            window.open(
+                'https://mypf.my',
+                '_blank' 
+            );
         };
     }
     //if budget is +ve
